@@ -6,11 +6,11 @@ using UnityEngine.UIElements;
 
 public class Reposition : MonoBehaviour
 {
-    Collider2D collitionArea;
+    Collider2D collisionArea;
 
     void Awake()
     {
-        collitionArea = GetComponent<Collider2D>();
+        collisionArea = GetComponent<Collider2D>();
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -41,7 +41,7 @@ public class Reposition : MonoBehaviour
                 }
                 break;
             case "Enemy":
-                if (collitionArea.enabled)
+                if (collisionArea.enabled)
                 {
                     transform.Translate(playerDirection * 20f + new Vector2(Random.Range(-3f, 3f), Random.Range(-3f, 3f)));
                 }
