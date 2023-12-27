@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
 
     [SerializeField] private float speed;
@@ -38,7 +38,11 @@ public class NewBehaviourScript : MonoBehaviour
         if (!isAlive)
             return;
 
-
         sprite.flipX = target.position.x < rb.position.x;
+    }
+
+    void OnEnable()
+    {
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
     }
 }
