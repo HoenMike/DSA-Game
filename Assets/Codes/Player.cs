@@ -5,10 +5,9 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
     public UnityEngine.Vector2 inputVector;
-
-
+    public float speed;
+    public Scanner scanner;
     Rigidbody2D rb;
     SpriteRenderer sprite;
     Animator animator;
@@ -18,6 +17,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        scanner = GetComponent<Scanner>();
     }
 
     void FixedUpdate()
