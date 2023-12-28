@@ -17,8 +17,8 @@ public class ItemData : ScriptableObject
 
 
     [Header("# Level Data")]
-    public float initDamage;
-    public int initCount;
+    public float baseDamage;
+    public int baseCount;
     public float[] damages;
     public int[] counts;
 
