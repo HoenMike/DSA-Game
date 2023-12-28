@@ -31,10 +31,12 @@ public class HUD : MonoBehaviour
                 break;
             case InfoType.Kill:
                 myText.text = string.Format("{0:F0}", GameManager.instance.kill);
-
                 break;
             case InfoType.Time:
-
+                float remainTime = GameManager.instance.maxGameTime - GameManager.instance.gameTime;
+                int minute = Mathf.FloorToInt(remainTime / 60);
+                int second = Mathf.FloorToInt(remainTime % 60);
+                myText.text = string.Format("{0:D2}:{1:D2}", minute, second);
                 break;
             case InfoType.Health:
 
