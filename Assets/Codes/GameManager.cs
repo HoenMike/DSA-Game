@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public float gameTime;
     public float maxGameTime = 2 * 10f;
+
     public PoolManager pool;
     public Player player;
 
