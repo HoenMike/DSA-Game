@@ -17,8 +17,8 @@ MonoBehaviour:
   itemName: Bullet
   itemDescription: 
   itemIcon: {fileID: -205726582, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
-  initDamage: 3
-  initCount: 0
+  baseDamage: 3
+  baseCount: 0
   damages:
   - 0.35
   - 0.7

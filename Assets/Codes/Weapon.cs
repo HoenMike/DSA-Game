@@ -46,7 +46,7 @@ public class Weapon : MonoBehaviour
         this.count += count;
         if (id == 0)
             Batch();
-
+        player.BroadcastMessage("ApplyGear");
     }
 
     public void Init(ItemData data)
@@ -79,8 +79,8 @@ public class Weapon : MonoBehaviour
             default:
                 speed = 0.3f;
                 break;
-
         }
+        player.BroadcastMessage("ApplyGear");
     }
 
     void Batch()

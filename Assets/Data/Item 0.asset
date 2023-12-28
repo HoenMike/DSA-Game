@@ -17,8 +17,8 @@ MonoBehaviour:
   itemName: Shovel
   itemDescription: 
   itemIcon: {fileID: -181907988, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
-  initialDamage: 4.5
-  initialCount: 3
+  baseDamage: 4.5
+  baseCount: 3
   damages:
   - 0.5
   - 1

@@ -179,6 +179,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 9a79e0715adbf134098e34eeea9537f6, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &14765890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +604,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 624f96e2582f8384585ddd474e699e89, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &161687487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,6 +1025,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 06032f8ce43f4784381697df0a480c3d, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &386043108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11242,6 +11245,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 38f619e2de16e154cb74a7fc2b687cf5, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &1166881829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16042,6 +16046,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: a78ce6b37333f644180b31ac4aad7d18, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!1 &1351337788
 GameObject:
   m_ObjectHideFlags: 0
@@ -21031,7 +21036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputVector: {x: 0, y: 0}
-  speed: 5
+  speed: 3
   scanner: {fileID: 0}
 --- !u!95 &1938714484
 Animator:
