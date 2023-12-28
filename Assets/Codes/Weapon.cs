@@ -92,7 +92,7 @@ public class Weapon : MonoBehaviour
             Vector3 rotateVector = Vector3.forward * 360 * i / count;
             bullet.Rotate(rotateVector);
             bullet.Translate(bullet.up * 1.5f, Space.World);
-            bullet.GetComponent<Bullet>().Init(damage, -1); // -1 means infinite
+            bullet.GetComponent<Bullet>().Init(damage, -1, Vector2.zero); // -1 means infinite
         }
     }
 
@@ -100,7 +100,15 @@ public class Weapon : MonoBehaviour
     {
         if (!player.scanner.nearestTarget)
             return;
+
+        Vector3 targetPosition = player.scanner.nearestTarget.position;
+        Vector3 fireDirection = targetPosition - transform.position;
+
+        fireDirection = fireDirection.normalized;
+
         Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
         bullet.position = transform.position;
+        bullet.rotation = Quaternion.FromToRotation(Vector3.up, fireDirection);
+        bullet.GetComponent<Bullet>().Init(damage, count, fireDirection);
     }
 }
