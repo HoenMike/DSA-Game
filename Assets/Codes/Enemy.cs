@@ -5,8 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    [SerializeField] private float speed;
-    [SerializeField] private Rigidbody2D target;
+    public float speed;
+
+    public Rigidbody2D target;
 
     bool isAlive = true;
 
@@ -34,7 +35,6 @@ public class Enemy : MonoBehaviour
 
     void LateUpdate()
     {
-        // if Enemy is not live do nothing; 
         if (!isAlive)
             return;
 
