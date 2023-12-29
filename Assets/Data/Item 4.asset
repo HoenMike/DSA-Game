@@ -15,10 +15,10 @@ MonoBehaviour:
   itemType: 4
   itemId: 4
   itemName: Heal
-  itemDescription: 
+  itemDescription: Heal to Full
   itemIcon: {fileID: 927338625, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
-  initDamage: 0
-  initCount: 0
+  baseDamage: 0
+  baseCount: 0
   damages:
   - 0
   - 0
@@ -27,3 +27,4 @@ MonoBehaviour:
   - 0
   counts: 0000000000000000000000000000000000000000
   projectile: {fileID: 0}
+  hand: {fileID: 0}
