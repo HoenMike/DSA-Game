@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
 
         if (per == -1)
         {
-            rb.velocity = Vector2.zero;
+            rb.velocity = Vector3.zero;
             gameObject.SetActive(false);
         }
 
