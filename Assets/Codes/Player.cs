@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public UnityEngine.Vector2 inputVector;
     public float speed;
     public Scanner scanner;
+    public Hand[] hands;
+
     Rigidbody2D rb;
     SpriteRenderer sprite;
     Animator animator;
@@ -18,6 +20,7 @@ public class Player : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         scanner = GetComponent<Scanner>();
+        hands = GetComponentsInChildren<Hand>(true);
     }
 
     void FixedUpdate()
