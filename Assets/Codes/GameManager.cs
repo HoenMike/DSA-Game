@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     public PoolManager pool;
     public Player player;
     public LevelUp uiLevelUp;
+    public GameObject uiResult;
 
     void Awake()
     {
@@ -39,6 +41,22 @@ public class GameManager : MonoBehaviour
         health = maxHealth;
         uiLevelUp.Select(0);
         isAlive = true;
+    }
+    public void GameOver()
+    {
+        StartCoroutine(GameOverRoutine());
+    }
+
+    IEnumerator GameOverRoutine()
+    {
+        isAlive = false;
+        yield return new WaitForSeconds(.5f);
+        uiResult.SetActive(true);
+        Stop();
+    }
+    public void GameRetry()
+    {
+        SceneManager.LoadScene(0);
     }
 
     void Update()
