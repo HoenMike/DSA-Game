@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     public void GetExp()
     {
         exp++;
-        if (exp >= nextExp[level])
+        if (exp >= nextExp[Mathf.Min(level, nextExp.Length - 1)])
         {
             exp = 0;
             level++;

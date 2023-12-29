@@ -4,6 +4,7 @@
 */
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LevelUp : MonoBehaviour
@@ -19,6 +20,7 @@ public class LevelUp : MonoBehaviour
 
     public void Show()
     {
+        Next();
         rect.localScale = Vector2.one;
         GameManager.instance.Stop();
     }
@@ -32,5 +34,39 @@ public class LevelUp : MonoBehaviour
     public void Select(int index)
     {
         items[index].OnClick();
+    }
+
+    void Next()
+    {
+        // make sure all item is inactive
+        foreach (Item item in items)
+        {
+            item.gameObject.SetActive(false);
+        }
+
+
+        // get 3 unique random number
+        int[] random = new int[3];
+        while (true)
+        {
+            random[0] = Random.Range(0, items.Length);
+            random[1] = Random.Range(0, items.Length);
+            random[2] = Random.Range(0, items.Length);
+
+            if (random[0] != random[1] && random[0] != random[2] && random[1] != random[2])
+                break;
+        }
+        for (int i = 0; i < random.Length; i++)
+        {
+            Item aRandomItem = items[random[i]];
+            if (aRandomItem.level == aRandomItem.data.damages.Length)
+            {
+                items[4].gameObject.SetActive(true);
+            }
+            else
+            {
+                aRandomItem.gameObject.SetActive(true);
+            }
+        }
     }
 }

@@ -35,15 +35,15 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!GameManager.instance.isAlive) // if player is dead do nothing
+            return;
+
         UnityEngine.Vector2 nextVector = inputVector.normalized * speed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + nextVector);
     }
 
     void OnMove(InputValue value)
     {
-        if (!GameManager.instance.isAlive) // if player is dead do nothing
-            return;
-
         inputVector = value.Get<Vector2>();
     }
 
