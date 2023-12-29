@@ -11872,7 +11872,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Kill 10 Zombie
+  m_Text: 'Kill 10 monster
 
     to unlock'
 --- !u!222 &867999453
@@ -19686,8 +19686,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1690471777}
+  - component: {fileID: 1690471778}
   m_Layer: 0
-  m_Name: AchiveMananer
+  m_Name: AchieveMananer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19701,13 +19702,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690471776}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1690471778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690471776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca518b2f1da92f144ac4d4a5ed6abe50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockCharacter:
+  - {fileID: 2122888113}
+  - {fileID: 1752125482}
+  unlockCharacter:
+  - {fileID: 271372805}
+  - {fileID: 549259233}
 --- !u!1 &1744848861
 GameObject:
   m_ObjectHideFlags: 0
@@ -25794,9 +25813,9 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 521416976}
   - {fileID: 527833520}
+  - {fileID: 1690471777}
   - {fileID: 1938714481}
   - {fileID: 447962366}
   - {fileID: 393410812}
   - {fileID: 1769047732}
   - {fileID: 1577887162}
-  - {fileID: 1690471777}
