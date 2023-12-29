@@ -855,7 +855,7 @@ MonoBehaviour:
       - m_Target: {fileID: 521416975}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GameStart
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6363,6 +6363,7 @@ MonoBehaviour:
   isAlive: 0
   gameTime: 0
   maxGameTime: 20
+  playerId: 0
   health: 0
   maxHealth: 100
   level: 0
@@ -11261,7 +11262,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e715fcabbb6163e48b780b3b92979f8e, type: 3}
-    m_FontSize: 6
+    m_FontSize: 5
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -11272,7 +11273,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: + 10% Movement
+  m_Text: +10% Move Speed
 --- !u!222 &853612664
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23296,11 +23297,11 @@ MonoBehaviour:
       - m_Target: {fileID: 521416975}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GameStart
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -23583,18 +23584,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e715fcabbb6163e48b780b3b92979f8e, type: 3}
-    m_FontSize: 6
+    m_FontSize: 5
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 55
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: + 10% Movement
+  m_Text: +10% Attack Speed
 --- !u!222 &1882397020
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23829,15 +23830,15 @@ GameObject:
   - component: {fileID: 1938714478}
   - component: {fileID: 1938714483}
   - component: {fileID: 1938714485}
-  - component: {fileID: 1938714484}
   - component: {fileID: 1938714486}
+  - component: {fileID: 1938714487}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!70 &1938714478
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -23988,27 +23989,11 @@ MonoBehaviour:
   speed: 3
   scanner: {fileID: 0}
   hands: []
---- !u!95 &1938714484
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938714477}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 439e884a45c37d949ac1bc31726f54fb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  animCon:
+  - {fileID: 9100000, guid: 439e884a45c37d949ac1bc31726f54fb, type: 2}
+  - {fileID: 22100000, guid: 907a33c5c778502439d46f5e7069298b, type: 2}
+  - {fileID: 22100000, guid: ed285fc9db9a133458d03997426aa78b, type: 2}
+  - {fileID: 22100000, guid: d4144fd54751e1f4d926e3f614e903b5, type: 2}
 --- !u!114 &1938714485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24056,6 +24041,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   nearestTarget: {fileID: 0}
+--- !u!95 &1938714487
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938714477}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b1e66c033f1cfc46910803bec8e5a88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1947944827
 GameObject:
   m_ObjectHideFlags: 0

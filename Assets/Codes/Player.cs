@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public float speed;
     public Scanner scanner;
     public Hand[] hands;
+    public RuntimeAnimatorController[] animCon;
 
     Rigidbody2D rb;
     SpriteRenderer sprite;
@@ -27,11 +28,10 @@ public class Player : MonoBehaviour
         hands = GetComponentsInChildren<Hand>(true);
     }
 
-    // void Update()
-    // {
-    //     if (!GameManager.instance.isAlive)
-    //         return;
-    // }
+    void OnEnable()
+    {
+        animator.runtimeAnimatorController = animCon[GameManager.instance.playerId];
+    }
 
     void FixedUpdate()
     {
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnCollisionStay2D(Collision2D hitBox)
+    void OnCollisionStay2D()
     {
         if (!GameManager.instance.isAlive) // if player is dead do nothing
             return;
