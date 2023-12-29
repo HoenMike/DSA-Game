@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int rotationSpeed = 10;
         timer += Time.deltaTime;
         level = Mathf.Min(Mathf.FloorToInt(GameManager.instance.gameTime / 10f), spawnData.Length - 1);
 
@@ -28,6 +29,8 @@ public class Spawner : MonoBehaviour
 
             Spawn();
         }
+
+        transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime);
     }
 
     void Spawn()
