@@ -1,3 +1,7 @@
+/* Name: #20
+ Mai Nguyen Hoang - ITITIU21208
+ Purpose: A vampire survivors clone that implements DSA.
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     public PoolManager pool;
     public Player player;
+    public LevelUp uiLevelUp;
 
     void Awake()
     {
@@ -51,6 +56,7 @@ public class GameManager : MonoBehaviour
         {
             exp = 0;
             level++;
+            uiLevelUp.Show();
         }
     }
 }

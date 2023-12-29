@@ -6,16 +6,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Follow : MonoBehaviour
+public class LevelUp : MonoBehaviour
 {
     RectTransform rect;
+
     void Awake()
     {
         rect = GetComponent<RectTransform>();
     }
 
-    void FixedUpdate()
+    public void Show()
     {
-        rect.position = Camera.main.WorldToScreenPoint(GameManager.instance.player.transform.position);
+        rect.localScale = Vector2.one;
+    }
+
+    public void Hide()
+    {
+        rect.localScale = Vector2.zero;
     }
 }
