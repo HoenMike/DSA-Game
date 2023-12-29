@@ -34,10 +34,11 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    void Start()
+    public void GameStart()
     {
         health = maxHealth;
         uiLevelUp.Select(0);
+        isAlive = true;
     }
 
     void Update()
@@ -58,8 +59,8 @@ public class GameManager : MonoBehaviour
         exp++;
         if (exp >= nextExp[Mathf.Min(level, nextExp.Length - 1)])
         {
-            exp = 0;
             level++;
+            exp = 0;
             uiLevelUp.Show();
         }
     }
