@@ -36,8 +36,10 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        // if Enemy is not live do nothing;
-        if (!isAlive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
+        if (!GameManager.instance.isAlive) // if player is dead do nothing
+            return;
+
+        if (!isAlive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit")) // if Enemy is dead do nothing
             return;
 
 
@@ -49,6 +51,11 @@ public class Enemy : MonoBehaviour
 
     void LateUpdate()
     {
+
+        if (!GameManager.instance.isAlive) // if player is dead do nothing
+            return;
+
+
         if (!isAlive)
             return;
 
@@ -96,8 +103,6 @@ public class Enemy : MonoBehaviour
             GameManager.instance.kill++;
             GameManager.instance.GetExp();
         }
-
-
     }
 
     IEnumerator KnockBack()

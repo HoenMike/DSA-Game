@@ -26,6 +26,9 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.instance.isAlive) // if player is dead do nothing
+            return;
+
         switch (id)
         {
             case 0:

@@ -27,6 +27,12 @@ public class Player : MonoBehaviour
         hands = GetComponentsInChildren<Hand>(true);
     }
 
+    // void Update()
+    // {
+    //     if (!GameManager.instance.isAlive)
+    //         return;
+    // }
+
     void FixedUpdate()
     {
         UnityEngine.Vector2 nextVector = inputVector.normalized * speed * Time.fixedDeltaTime;
@@ -35,11 +41,16 @@ public class Player : MonoBehaviour
 
     void OnMove(InputValue value)
     {
+        if (!GameManager.instance.isAlive) // if player is dead do nothing
+            return;
+
         inputVector = value.Get<Vector2>();
     }
 
     void LateUpdate()
     {
+        if (!GameManager.instance.isAlive) // if player is dead do nothing
+            return;
 
         animator.SetFloat("Speed", inputVector.magnitude);
 
