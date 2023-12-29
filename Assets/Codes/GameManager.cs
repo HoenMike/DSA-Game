@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        uiLevelUp.Select(0);
     }
 
     void Update()

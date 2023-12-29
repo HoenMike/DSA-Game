@@ -22,7 +22,7 @@ public class Scanner : MonoBehaviour
 
     Transform GetNearestTarget()
     {
-        Transform nearestTarget = null;
+        Transform aimTarget = null;
         float diff = 100;
 
         foreach (RaycastHit2D hit in targets)
@@ -35,10 +35,10 @@ public class Scanner : MonoBehaviour
             if (currDiff < diff)
             {
                 diff = currDiff;
-                nearestTarget = hit.transform;
+                aimTarget = hit.transform;
             }
         }
 
-        return nearestTarget;
+        return aimTarget;
     }
 }
