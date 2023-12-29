@@ -1065,7 +1065,16 @@ MonoBehaviour:
   - spriteType: 1
     spawnTime: 0.2
     health: 15
-    speed: 2.4
+    speed: 3
+  - spriteType: 2
+    spawnTime: 0.5
+    health: 20
+    speed: 2.5
+  - spriteType: 3
+    spawnTime: 0.8
+    health: 50
+    speed: 2
+  levelTime: 0
 --- !u!1 &304143624
 GameObject:
   m_ObjectHideFlags: 0
@@ -6773,14 +6782,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlive: 0
   gameTime: 0
-  maxGameTime: 20
+  maxGameTime: 60
   playerId: 0
   health: 0
   maxHealth: 100
   level: 0
   kill: 0
   exp: 0
-  nextExp: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
+  nextExp: 01000000020000000300000005000000080000000d00000015000000220000003700000059000000
   pool: {fileID: 527833519}
   player: {fileID: 1938714483}
   uiLevelUp: {fileID: 514313855}
@@ -19833,7 +19842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 99999
-  per: -1
+  per: -100
 --- !u!61 &1577887161
 BoxCollider2D:
   m_ObjectHideFlags: 0
