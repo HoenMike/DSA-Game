@@ -1,9 +1,14 @@
+/* Name: #20
+ Mai Nguyen Hoang - ITITIU21208
+ Purpose: A vampire survivors clone that implements DSA.
+*/
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+//* Manages the audio in the game, including background music (BGM) and sound effects (SFX) *//
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
@@ -23,12 +28,14 @@ public class AudioManager : MonoBehaviour
 
     public enum Sfx { Dead, Hit, LevelUp = 3, Lose, Mele, Range = 7, Select, Win }
 
+    //* Unity Functions *//
     void Awake()
     {
         instance = this;
         Init();
     }
 
+    //* Custom Functions *//
     void Init()
     {
         GameObject bgmObject = new GameObject("BgmPlayer");
@@ -100,7 +107,7 @@ public class AudioManager : MonoBehaviour
                 randomIndex = UnityEngine.Random.Range(0, 2);
 
             channelIndex = loopIndex;
-            sfxPlayers[loopIndex].clip = sfxClips[(int)sfx];
+            sfxPlayers[loopIndex].clip = sfxClips[(int)sfx + randomIndex];
             sfxPlayers[loopIndex].Play();
             break;
         }

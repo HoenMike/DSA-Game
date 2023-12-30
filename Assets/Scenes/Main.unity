@@ -6862,7 +6862,7 @@ MonoBehaviour:
   level: 0
   kill: 0
   exp: 0
-  nextExp: 01000000020000000300000005000000080000000d00000015000000220000003700000059000000
+  nextExp: 0300000005000000080000000d0000001500000022000000370000005900000090000000e9000000
   pool: {fileID: 527833519}
   player: {fileID: 1938714483}
   uiLevelUp: {fileID: 514313855}
@@ -12115,7 +12115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Kill 10 monster
+  m_Text: 'Kill 30 monster
 
     to unlock'
 --- !u!222 &867999453
@@ -12943,7 +12943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1009403419
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20520,7 +20520,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752125482}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
@@ -26592,7 +26592,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122888113}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 

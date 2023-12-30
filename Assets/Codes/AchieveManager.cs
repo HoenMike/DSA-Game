@@ -1,19 +1,26 @@
+/* Name: #20
+ Mai Nguyen Hoang - ITITIU21208
+ Purpose: A vampire survivors clone that implements DSA.
+*/
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
+//* Manages the achievements and unlocking of characters in the game *//
 public class AchieveManager : MonoBehaviour
 {
+    enum Achieve { UnlockBo, UnlockKitty }
     public GameObject[] lockCharacter;
     public GameObject[] unlockCharacter;
     public GameObject uiNoti;
-
-    enum Achieve { UnlockBo, UnlockKitty }
     Achieve[] achieves;
     WaitForSecondsRealtime wait;
 
+    //* Unity Function *//
+
+    // Awake is called when the script instance is being loaded.
     void Awake()
     {
         achieves = Enum.GetValues(typeof(Achieve)) as Achieve[];
@@ -25,6 +32,22 @@ public class AchieveManager : MonoBehaviour
         }
     }
 
+    // Start is called before the first frame update.
+    void Start()
+    {
+        UnlockCharacter();
+    }
+
+    // LateUpdate is called once per frame, after all Update functions have been called.
+    void LateUpdate()
+    {
+        foreach (Achieve achieve in achieves)
+        {
+            CheckAchieve(achieve);
+        }
+    }
+
+    // Initializes the player's data and achievements.
     void Init()
     {
         PlayerPrefs.SetInt("MyData", 1);
@@ -33,11 +56,8 @@ public class AchieveManager : MonoBehaviour
             PlayerPrefs.SetInt(achieve.ToString(), 0);
         }
     }
-    void Start()
-    {
-        UnlockCharacter();
-    }
 
+    //* Custom Function *//
     void UnlockCharacter()
     {
         for (int i = 0; i < lockCharacter.Length; i++)
@@ -48,13 +68,7 @@ public class AchieveManager : MonoBehaviour
             unlockCharacter[i].SetActive(isUnlock);
         }
     }
-    void LateUpdate()
-    {
-        foreach (Achieve achieve in achieves)
-        {
-            CheckAchieve(achieve);
-        }
-    }
+
     void CheckAchieve(Achieve achieve)
     {
         bool isAchieve = false;
@@ -62,7 +76,7 @@ public class AchieveManager : MonoBehaviour
         {
             case Achieve.UnlockBo:
                 if (GameManager.instance.isAlive)
-                    isAchieve = GameManager.instance.kill >= 20;
+                    isAchieve = GameManager.instance.kill >= 30;
                 break;
             case Achieve.UnlockKitty:
                 isAchieve = GameManager.instance.gameTime == GameManager.instance.maxGameTime;
@@ -71,7 +85,6 @@ public class AchieveManager : MonoBehaviour
         if (isAchieve && PlayerPrefs.GetInt(achieve.ToString()) == 0)
         {
             PlayerPrefs.SetInt(achieve.ToString(), 1);
-
 
             for (int i = 0; i < uiNoti.transform.childCount; i++)
             {
