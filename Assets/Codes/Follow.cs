@@ -9,13 +9,15 @@ using UnityEngine;
 //* Follows the player's position *//
 public class Follow : MonoBehaviour
 {
+    // GameObject 
     RectTransform rect;
+
+    //* Unity's Functions *//
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
         rect = GetComponent<RectTransform>();
     }
-
     // FixedUpdate is called at a fixed interval and is independent of frame rate (use for physics calculations)
     void FixedUpdate()
     {

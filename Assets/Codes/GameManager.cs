@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public Result uiResult;
     public GameObject enemyCleaner;
 
+    //* Unity's Functions *//
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
