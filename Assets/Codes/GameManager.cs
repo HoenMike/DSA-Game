@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public Result uiResult;
     public GameObject enemyCleaner;
 
+    // Awake is called when the script instance is being loaded.
     void Awake()
     {
         instance = this;
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (!isAlive)

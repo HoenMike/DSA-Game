@@ -20,6 +20,7 @@ public class Item : MonoBehaviour
     Text textName;
     Text textDesc;
 
+    // Awake is called when the script instance is being loaded.
     void Awake()
     {
         icon = GetComponentsInChildren<Image>()[1];

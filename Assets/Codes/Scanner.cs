@@ -14,6 +14,7 @@ public class Scanner : MonoBehaviour
 
     public Transform nearestTarget;
 
+    // FixedUpdate is called at a fixed interval and is independent of frame rate (use for physics calculations)
     void FixedUpdate()
     {
         targets = Physics2D.CircleCastAll(transform.position, scanRange, Vector2.zero, 0, targetLayer);

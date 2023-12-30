@@ -19,11 +19,13 @@ public class Weapon : MonoBehaviour
     float timer;
     Player player;
 
+    // Awake is called when the script instance is being loaded.
     void Awake()
     {
         player = GameManager.instance.player;
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (!GameManager.instance.isAlive) // if player is dead do nothing

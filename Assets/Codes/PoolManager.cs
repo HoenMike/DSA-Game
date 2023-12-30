@@ -12,6 +12,7 @@ public class PoolManager : MonoBehaviour
 
     List<GameObject>[] pools;
 
+    // Awake is called when the script instance is being loaded.
     void Awake()
     {
         pools = new List<GameObject>[prefabs.Length];

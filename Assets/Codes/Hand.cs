@@ -19,11 +19,13 @@ public class Hand : MonoBehaviour
     Quaternion lefRotate = Quaternion.Euler(0, 0, -35);
     Quaternion lefRotateReverse = Quaternion.Euler(0, 0, -135);
 
+    // Awake is called when the script instance is being loaded.
     void Awake()
     {
         player = GetComponentsInParent<SpriteRenderer>()[1];
     }
 
+    // LateUpdate is called once per frame, after all Update functions have been called.
     void LateUpdate()
     {
         bool isReverse = player.flipX;

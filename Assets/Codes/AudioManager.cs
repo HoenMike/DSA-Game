@@ -11,6 +11,7 @@ using UnityEngine;
 //* Manages the audio in the game, including background music (BGM) and sound effects (SFX) *//
 public class AudioManager : MonoBehaviour
 {
+    // Game Objects
     public static AudioManager instance;
 
     [Header("#BGM")]
@@ -29,6 +30,7 @@ public class AudioManager : MonoBehaviour
     public enum Sfx { Dead, Hit, LevelUp = 3, Lose, Mele, Range = 7, Select, Win }
 
     //* Unity Functions *//
+    // Awake is called when the script instance is being loaded.
     void Awake()
     {
         instance = this;
@@ -59,7 +61,6 @@ public class AudioManager : MonoBehaviour
             sfxPlayers[i].volume = sfxVolume;
         }
     }
-
     public void PlayBgm(bool isPlay)
     {
         if (isPlay)
@@ -71,24 +72,6 @@ public class AudioManager : MonoBehaviour
             bgmPlayer.Stop();
         }
     }
-
-    IEnumerator FadeInBgm(float duration)
-    {
-        float startVolume = 0f;
-        bgmPlayer.volume = startVolume;
-        bgmPlayer.Play();
-
-        while (bgmPlayer.volume < bgmVolume)
-        {
-            bgmPlayer.volume += bgmVolume * Time.deltaTime / duration;
-
-            yield return null;
-        }
-
-        bgmPlayer.volume = bgmVolume;
-    }
-
-
     public void EffectBgm(bool isPlay)
     {
         bgmEffect.enabled = isPlay;
@@ -112,5 +95,19 @@ public class AudioManager : MonoBehaviour
             break;
         }
     }
+    IEnumerator FadeInBgm(float duration)
+    {
+        float startVolume = 0f;
+        bgmPlayer.volume = startVolume;
+        bgmPlayer.Play();
 
+        while (bgmPlayer.volume < bgmVolume)
+        {
+            bgmPlayer.volume += bgmVolume * Time.deltaTime / duration;
+
+            yield return null;
+        }
+
+        bgmPlayer.volume = bgmVolume;
+    }
 }

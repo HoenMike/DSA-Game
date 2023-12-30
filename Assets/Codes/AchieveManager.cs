@@ -11,15 +11,17 @@ using UnityEngine.PlayerLoop;
 //* Manages the achievements and unlocking of characters in the game *//
 public class AchieveManager : MonoBehaviour
 {
-    enum Achieve { UnlockBo, UnlockKitty }
+    // Game Objects
     public GameObject[] lockCharacter;
     public GameObject[] unlockCharacter;
     public GameObject uiNoti;
+
+    // Variables
+    enum Achieve { UnlockBo, UnlockKitty }
     Achieve[] achieves;
     WaitForSecondsRealtime wait;
 
     //* Unity Function *//
-
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
@@ -31,13 +33,11 @@ public class AchieveManager : MonoBehaviour
             Init();
         }
     }
-
     // Start is called before the first frame update.
     void Start()
     {
         UnlockCharacter();
     }
-
     // LateUpdate is called once per frame, after all Update functions have been called.
     void LateUpdate()
     {
@@ -47,6 +47,7 @@ public class AchieveManager : MonoBehaviour
         }
     }
 
+    //* Custom Function *//
     // Initializes the player's data and achievements.
     void Init()
     {
@@ -56,8 +57,6 @@ public class AchieveManager : MonoBehaviour
             PlayerPrefs.SetInt(achieve.ToString(), 0);
         }
     }
-
-    //* Custom Function *//
     void UnlockCharacter()
     {
         for (int i = 0; i < lockCharacter.Length; i++)
@@ -68,7 +67,6 @@ public class AchieveManager : MonoBehaviour
             unlockCharacter[i].SetActive(isUnlock);
         }
     }
-
     void CheckAchieve(Achieve achieve)
     {
         bool isAchieve = false;
@@ -94,7 +92,6 @@ public class AchieveManager : MonoBehaviour
             StartCoroutine(NotiRoutine());
         }
     }
-
     IEnumerator NotiRoutine()
     {
         uiNoti.SetActive(true);

@@ -15,12 +15,14 @@ public class HUD : MonoBehaviour
     Text myText;
     Slider mySlider;
 
+    // Awake is called when the script instance is being loaded.
     void Awake()
     {
         myText = GetComponent<Text>();
         mySlider = GetComponent<Slider>();
     }
 
+    // LateUpdate is called once per frame, after all Update functions have been called.
     void LateUpdate()
     {
         switch (type)

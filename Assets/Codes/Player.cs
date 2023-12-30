@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     SpriteRenderer sprite;
     Animator animator;
 
+    // Awake is called when the script instance is being loaded.
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
         animator.runtimeAnimatorController = animCon[GameManager.instance.playerId];
     }
 
+    // FixedUpdate is called at a fixed interval and is independent of frame rate (use for physics calculations)
     void FixedUpdate()
     {
         if (!GameManager.instance.isAlive) // if player is dead do nothing
@@ -48,6 +50,7 @@ public class Player : MonoBehaviour
         inputVector = value.Get<Vector2>();
     }
 
+    // LateUpdate is called once per frame, after all Update functions have been called.
     void LateUpdate()
     {
         if (!GameManager.instance.isAlive) // if player is dead do nothing
