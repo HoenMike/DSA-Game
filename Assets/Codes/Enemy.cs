@@ -115,7 +115,7 @@ public class Enemy : MonoBehaviour
         UnityEngine.Vector2 playerPosition = GameManager.instance.player.transform.position;
         UnityEngine.Vector2 direction = (UnityEngine.Vector2)transform.position - playerPosition;
 
-        rb.AddForce(direction.normalized * 3, ForceMode2D.Impulse);
+        rb.AddForce(direction.normalized * 0.2f, ForceMode2D.Impulse);
     }
     void Dead()
     {
