@@ -564,8 +564,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea7e24c1078700448961dfb679ff53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeft: 1
   sprite: {fileID: 193839379}
+  isLeft: 1
 --- !u!212 &193839379
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12357,7 +12357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &953236710
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12376,10 +12376,10 @@ RectTransform:
   - {fileID: 1932153569}
   m_Father: {fileID: 465787936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 45, y: -50}
+  m_SizeDelta: {x: 90, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &953236711
 MonoBehaviour:
@@ -12394,9 +12394,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 06032f8ce43f4784381697df0a480c3d, type: 2}
-  level: 0
   weapon: {fileID: 0}
   gear: {fileID: 0}
+  level: 0
 --- !u!114 &953236712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12698,7 +12698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &984768758
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12717,10 +12717,10 @@ RectTransform:
   - {fileID: 1376107150}
   m_Father: {fileID: 465787936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 45, y: -24.75}
+  m_SizeDelta: {x: 90, y: 49.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &984768759
 MonoBehaviour:
@@ -12735,9 +12735,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 38f619e2de16e154cb74a7fc2b687cf5, type: 2}
-  level: 0
   weapon: {fileID: 0}
   gear: {fileID: 0}
+  level: 0
 --- !u!114 &984768760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13097,9 +13097,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 9a79e0715adbf134098e34eeea9537f6, type: 2}
-  level: 0
   weapon: {fileID: 0}
   gear: {fileID: 0}
+  level: 0
 --- !u!114 &1050098472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18682,7 +18682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1345126957
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18701,10 +18701,10 @@ RectTransform:
   - {fileID: 1413624854}
   m_Father: {fileID: 465787936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 45, y: -16.333332}
+  m_SizeDelta: {x: 90, y: 32.666664}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1345126958
 MonoBehaviour:
@@ -18825,9 +18825,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: a78ce6b37333f644180b31ac4aad7d18, type: 2}
-  level: 0
   weapon: {fileID: 0}
   gear: {fileID: 0}
+  level: 0
 --- !u!1 &1351337788
 GameObject:
   m_ObjectHideFlags: 0
@@ -19721,8 +19721,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea7e24c1078700448961dfb679ff53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeft: 0
   sprite: {fileID: 1551887204}
+  isLeft: 0
 --- !u!212 &1551887204
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25351,9 +25351,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 624f96e2582f8384585ddd474e699e89, type: 2}
-  level: 0
   weapon: {fileID: 0}
   gear: {fileID: 0}
+  level: 0
 --- !u!114 &1876500422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26012,14 +26012,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputVector: {x: 0, y: 0}
-  speed: 3
-  scanner: {fileID: 0}
   hands: []
   animCon:
   - {fileID: 9100000, guid: 439e884a45c37d949ac1bc31726f54fb, type: 2}
   - {fileID: 22100000, guid: 907a33c5c778502439d46f5e7069298b, type: 2}
   - {fileID: 22100000, guid: ed285fc9db9a133458d03997426aa78b, type: 2}
   - {fileID: 22100000, guid: d4144fd54751e1f4d926e3f614e903b5, type: 2}
+  scanner: {fileID: 0}
+  speed: 3
 --- !u!114 &1938714485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26062,11 +26062,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c874b02a07b18e5468ab79fdf82a0a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scanRange: 5
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
   nearestTarget: {fileID: 0}
+  scanRange: 5
 --- !u!95 &1938714487
 Animator:
   serializedVersion: 5
