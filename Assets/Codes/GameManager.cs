@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//* Singleton GameManager Class to store Universal game Data and control Game Logic *//
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -38,8 +39,24 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        Application.targetFrameRate = 60;
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        if (!isAlive)
+            return;
+
+        gameTime += Time.deltaTime;
+
+        if (gameTime > maxGameTime)
+        {
+            gameTime = maxGameTime;
+            GameWin();
+        }
     }
 
+    //* Game State Handler *//
     public void GameStart(int playerId)
     {
         this.playerId = playerId;
@@ -56,7 +73,6 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(GameWinRoutine());
     }
-
     IEnumerator GameWinRoutine()
     {
         isAlive = false;
@@ -90,22 +106,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!isAlive)
-            return;
-
-        gameTime += Time.deltaTime;
-
-        if (gameTime > maxGameTime)
-        {
-            gameTime = maxGameTime;
-            GameWin();
-        }
-    }
-
     public void GetExp()
     {
         if (!isAlive)
@@ -119,13 +119,11 @@ public class GameManager : MonoBehaviour
             uiLevelUp.Show();
         }
     }
-
     public void Stop()
     {
         isAlive = false;
         Time.timeScale = 0;
     }
-
     public void Resume()
     {
         isAlive = true;

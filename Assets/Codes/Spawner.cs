@@ -6,18 +6,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//* Spawner class to handle enemy spawn *//
 public class Spawner : MonoBehaviour
 {
-
+    //* GameObjects *//
     public Transform[] spawnPoint; // Spawns's location
     public SpawnData[] spawnData; // Enemy's data
     private List<SpawnData> spawnList; // List of Enemies to spawn
+
+    //* Variables *//
     private int lastLevel = -1; // Last level of Enemy spawned
     public float levelTime; // Spawn Time Scale
-
     int level;
     float timer;
 
+    //* Unity's Functions *//
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
@@ -25,7 +28,6 @@ public class Spawner : MonoBehaviour
         spawnList = new List<SpawnData>();
         levelTime = GameManager.instance.maxGameTime / spawnData.Length; //spawn time Scale with maxGameTime
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -56,6 +58,7 @@ public class Spawner : MonoBehaviour
         transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime);
     }
 
+    //* Custom Function *//
     void Spawn()
     {
         // For each Enemy in spawnList
@@ -68,7 +71,8 @@ public class Spawner : MonoBehaviour
     }
 }
 
-[System.Serializable]
+//* SpawnData class to store Enemy's data *//
+[System.Serializable] // Make it visible in Unity's Inspector
 public class SpawnData
 {
     public int spriteType;

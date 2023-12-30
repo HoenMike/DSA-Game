@@ -6,10 +6,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//* Result class to handle result screen *//
+//* Called by GameManager *//
 public class Result : MonoBehaviour
 {
+    //* GameObject *//
     public GameObject[] titles;
 
+    //* Custom Functions *//
     public void Lose()
     {
         titles[0].SetActive(true);

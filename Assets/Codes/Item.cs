@@ -8,18 +8,22 @@ using System.Data.Common;
 using UnityEngine;
 using UnityEngine.UI;
 
+//* Item class to handle Items's data and Logic *//
 public class Item : MonoBehaviour
 {
+    // GameObjects
     public ItemData data;
-    public int level;
     public Weapon weapon;
     public Gear gear;
-
     Image icon;
     Text textLevel;
     Text textName;
     Text textDesc;
 
+    // Variables
+    public int level;
+
+    //* Unity's Functions *//
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
@@ -33,11 +37,9 @@ public class Item : MonoBehaviour
 
         textName.text = data.itemName;
     }
-
     void OnEnable()
     {
         textLevel.text = "Lv." + (level + 1);
-
         switch (data.itemType)
         {
             case ItemData.ItemType.Mele:
@@ -52,10 +54,9 @@ public class Item : MonoBehaviour
                 textDesc.text = string.Format(data.itemDescription);
                 break;
         }
-
-
     }
 
+    //* Custom Functions *//
     public void OnClick()
     {
         switch (data.itemType)

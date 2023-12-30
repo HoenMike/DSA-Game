@@ -6,12 +6,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//* Pool manager to store and reuse objects using Array *//
 public class PoolManager : MonoBehaviour
 {
+    //* GameObjects *//
+    // prefabs is an special Unity's Object with predefined properties used to create instances of an Object
     public GameObject[] prefabs;
-
     List<GameObject>[] pools;
 
+    //* Unity's Functions *//
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
@@ -23,6 +26,7 @@ public class PoolManager : MonoBehaviour
         }
     }
 
+    //* Custom Functions *//
     public GameObject Get(int index)
     {
         GameObject select = null;

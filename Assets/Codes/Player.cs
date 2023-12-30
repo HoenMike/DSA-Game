@@ -7,18 +7,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//* Handle player's logic *//
 public class Player : MonoBehaviour
 {
+    //* GameObjects *//
     public UnityEngine.Vector2 inputVector;
-    public float speed;
-    public Scanner scanner;
     public Hand[] hands;
     public RuntimeAnimatorController[] animCon;
-
+    public Scanner scanner;
     Rigidbody2D rb;
     SpriteRenderer sprite;
     Animator animator;
 
+    //* Variables *//
+    public float speed;
+
+    //* Unity's Functions *//
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
@@ -28,13 +32,11 @@ public class Player : MonoBehaviour
         scanner = GetComponent<Scanner>();
         hands = GetComponentsInChildren<Hand>(true);
     }
-
     void OnEnable()
     {
         speed *= Character.Speed;
         animator.runtimeAnimatorController = animCon[GameManager.instance.playerId];
     }
-
     // FixedUpdate is called at a fixed interval and is independent of frame rate (use for physics calculations)
     void FixedUpdate()
     {
@@ -44,12 +46,6 @@ public class Player : MonoBehaviour
         UnityEngine.Vector2 nextVector = inputVector.normalized * speed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + nextVector);
     }
-
-    void OnMove(InputValue value)
-    {
-        inputVector = value.Get<Vector2>();
-    }
-
     // LateUpdate is called once per frame, after all Update functions have been called.
     void LateUpdate()
     {
@@ -63,7 +59,6 @@ public class Player : MonoBehaviour
             sprite.flipX = inputVector.x < 0;
         }
     }
-
     void OnCollisionStay2D()
     {
         if (!GameManager.instance.isAlive) // if player is dead do nothing
@@ -81,5 +76,9 @@ public class Player : MonoBehaviour
             animator.SetTrigger("Dead");
             GameManager.instance.GameOver();
         }
+    }
+    void OnMove(InputValue value) // Special InputSystem function
+    {
+        inputVector = value.Get<Vector2>();
     }
 }

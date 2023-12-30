@@ -8,16 +8,19 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 
+//* Repositions the object when it leaves the area *//
+//* Used for ground and enemy *//
 public class Reposition : MonoBehaviour
 {
+    //* GameObject *//
     Collider2D collisionArea;
 
+    //* Unity's Functions *//
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
         collisionArea = GetComponent<Collider2D>();
     }
-
     void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Area"))
@@ -26,11 +29,9 @@ public class Reposition : MonoBehaviour
         Vector2 playerPosition = GameManager.instance.player.transform.position;
         Vector2 myPosition = transform.position;
 
-
-
         switch (transform.tag)
         {
-            case "Ground":
+            case "Ground": // when ground out of the screen, reposition it to the opposite side
                 float diffX = playerPosition.x - myPosition.x;
                 float diffY = playerPosition.y - myPosition.y;
 
@@ -49,7 +50,7 @@ public class Reposition : MonoBehaviour
                     transform.Translate(Vector2.up * directionY * 40f);
                 }
                 break;
-            case "Enemy":
+            case "Enemy": // when enemy out of the screen, relocate it to a random position (near the player)
                 if (collisionArea.enabled)
                 {
                     Vector2 distance = playerPosition - myPosition;
@@ -58,6 +59,5 @@ public class Reposition : MonoBehaviour
                 }
                 break;
         }
-
     }
 }

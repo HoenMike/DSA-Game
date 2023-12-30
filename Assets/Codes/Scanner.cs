@@ -6,14 +6,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//* Handle scan function to get nearest target *//
 public class Scanner : MonoBehaviour
 {
-    public float scanRange;
+    //* GameObjects *//
     public LayerMask targetLayer;
     public RaycastHit2D[] targets;
-
     public Transform nearestTarget;
 
+    //* Variables *//
+    public float scanRange;
+
+    //* Unity's Functions *//
     // FixedUpdate is called at a fixed interval and is independent of frame rate (use for physics calculations)
     void FixedUpdate()
     {
@@ -21,6 +25,7 @@ public class Scanner : MonoBehaviour
         nearestTarget = GetNearestTarget();
     }
 
+    //* Custom Functions *//
     Transform GetNearestTarget()
     {
         Transform aimTarget = null;

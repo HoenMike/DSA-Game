@@ -6,13 +6,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//* Handle gear's property *//
 public class Gear : MonoBehaviour
 {
+    // GameObjects
     public ItemData.ItemType type;
+    // Variables
     public float rate;
-
     private const float INITIAL_WEAPON_SPEED = 150f;
     private const float INITIAL_WEAPON_RATE = .5f;
+
+    //* Custom Functions *//
     public void Init(ItemData data)
     {
         // Basic Set
@@ -25,13 +29,11 @@ public class Gear : MonoBehaviour
         rate = data.damages[0];
         ApplyGear();
     }
-
     public void LevelUp(float rate)
     {
         this.rate = rate;
         ApplyGear();
     }
-
     void ApplyGear()
     {
         switch (type)
@@ -44,7 +46,6 @@ public class Gear : MonoBehaviour
                 break;
         }
     }
-
     void RateUp()
     {
         Weapon[] weapons = transform.parent.GetComponentsInChildren<Weapon>();
@@ -59,13 +60,11 @@ public class Gear : MonoBehaviour
                     break;
                 default:
                     speed = INITIAL_WEAPON_RATE * Character.WeaponRate;
-
                     weapon.speed = speed * (1f - rate);
                     break;
             }
         }
     }
-
     void SpeedUp()
     {
         float speed = 3 * Character.Speed;

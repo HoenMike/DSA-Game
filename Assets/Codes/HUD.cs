@@ -7,23 +7,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//* Control HUD elements *//
 public class HUD : MonoBehaviour
 {
-    public enum InfoType { Exp, Level, Kill, Time, Health }
-    public InfoType type;
-
+    // GameObjects
     Text myText;
     Slider mySlider;
 
+    // Variables
+    public enum InfoType { Exp, Level, Kill, Time, Health }
+    public InfoType type;
+
+    //* Unity's Functions *//
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
         myText = GetComponent<Text>();
         mySlider = GetComponent<Slider>();
     }
-
     // LateUpdate is called once per frame, after all Update functions have been called.
-    void LateUpdate()
+    void LateUpdate() // update HUD elements according to their type
     {
         switch (type)
         {

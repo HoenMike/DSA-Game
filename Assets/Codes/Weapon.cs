@@ -8,23 +8,28 @@ using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
+//* Weapon class to handle weapon logic *//
 public class Weapon : MonoBehaviour
 {
-    public int id;
-    public int prefabId;
+    //* GameObject *//
+    Player player;
+
+    //* Weapon Information *//
+    public int id; // 0: Melee, 1: Range, 2: Glove, 3: Shoe, 4: Heal
+    public int prefabId; // store prefab id in pool
     public float damage;
     public int count;
     public float speed;
 
+    //* Variable *//
     float timer;
-    Player player;
 
+    //* Unity's Functions *//
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
         player = GameManager.instance.player;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -48,6 +53,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    //* Custom Functions *//
     public void LevelUp(float damage, int count)
     {
         this.damage = damage * Character.Damage;
@@ -56,7 +62,6 @@ public class Weapon : MonoBehaviour
             Batch();
         player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
-
     public void Init(ItemData data)
     {
         // Basic Set
@@ -96,7 +101,6 @@ public class Weapon : MonoBehaviour
 
         player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
-
     void Batch()
     {
         for (int i = 0; i < count; i++)
@@ -112,8 +116,6 @@ public class Weapon : MonoBehaviour
             }
 
             bullet.parent = transform;
-
-
 
             bullet.localPosition = Vector3.zero;
             bullet.localRotation = Quaternion.identity;
@@ -141,6 +143,5 @@ public class Weapon : MonoBehaviour
         bullet.GetComponent<Bullet>().Init(damage, count, fireDirection);
 
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Range);
-
     }
 }

@@ -6,12 +6,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//* ItemData to store item info *//
 [CreateAssetMenu(fileName = "Item", menuName = "Scriptable Object/ItemData")]
 public class ItemData : ScriptableObject
 {
-
     public enum ItemType { Mele, Range, Glove, Shoe, Heal }
+
     [Header("# Main Info")]
     public ItemType itemType;
     public int itemId;
@@ -19,7 +19,6 @@ public class ItemData : ScriptableObject
     [TextArea]
     public string itemDescription;
     public Sprite itemIcon;
-
 
     [Header("# Level Data")]
     public float baseDamage;
