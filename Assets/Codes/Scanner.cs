@@ -11,6 +11,7 @@ public class Scanner : MonoBehaviour
 {
     //* GameObjects *//
     public LayerMask targetLayer;
+    // array of targets around the player
     public RaycastHit2D[] targets;
     public Transform nearestTarget;
 
