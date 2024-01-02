@@ -10,4 +10,6 @@ The game was made by Unity using C#, please open the game using this link: <http
 
 UML Diagram at: <https://miro.com/app/board/uXjVN_BPq2Y=/>
 
+Presentation video: <https://youtu.be/07Topq0-1kw>
+
 The source codes are in the folder: `Assets/Codes`
